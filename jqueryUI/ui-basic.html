@@ -1,0 +1,30 @@
+<script src="http://code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js" type="text/javascript"></script>
+<script>
+('timer' in jQuery.fn) ||(function($){
+	$.widget('ui.timer', {
+        options: {},
+        // _init && _create 自动被调用
+        _init:function(){
+        	console.log("_init");
+        	// 把客户端传递给组件的参数打印出来
+        	console.log(this.options.from);
+        	console.log(this.options.to);
+        	console.log(this.options.format);
+        },
+        _create:function(){
+        	console.log("_create")
+        }
+    });
+})(jQuery);
+
+// 测试刚才的小组件
+jQuery(function($){
+	$('<div></div>').timer({
+		from:'fromDate',
+		to:'toDate',
+		format:'yyyy-MM-DD-HH-MM-SS'
+	});
+});
+
+</script>
