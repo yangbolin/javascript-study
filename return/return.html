@@ -1,0 +1,17 @@
+<script>
+function testReturn() {
+	var sum = 0;
+	for (var i = 0; i < 10; ++i) {
+		sum += i;
+	}
+	if (sum < 2000000) {
+		return sum;	
+	}
+	
+	sum += 10000;
+	console.log(sum);	
+}
+
+var sum = testReturn();
+console.log(sum);
+</script>
